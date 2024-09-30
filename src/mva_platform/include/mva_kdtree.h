@@ -57,6 +57,38 @@ typedef struct mva_kdres_
 
 
 MVAP_API mva_kdtree *mva_kd_create(int k);
+void mva_kd_free(mva_kdtree *tree);
+void mva_kd_clear(mva_kdtree *tree);
+void mva_kd_destructor(mva_kdtree *tree, void (*destr)(void*));
+
+int mva_kd_insert(mva_kdtree *tree, const double *pos, void *data);
+int mva_kd_insertf(mva_kdtree *tree, const float *pos, void *data);
+int mva_kd_insert3(mva_kdtree *tree, double x, double y, double z, void *data);
+int mva_kd_insert3f(mva_kdtree *tree, float x, float y, float z, void *data);
+
+mva_kdres *mva_kd_nearest(mva_kdtree *tree, const double *pos);
+mva_kdres *mva_kd_nearestf(mva_kdtree *tree, const float *pos);
+mva_kdres *mva_kd_nearest3(mva_kdtree *tree, double x, double y, double z);
+mva_kdres *mva_kd_nearest3f(mva_kdtree *tree, float x, float y, float z);
+
+mva_kdres *mva_kd_nearest_range(mva_kdtree *tree, const double *pos, double range);
+mva_kdres *mva_kd_nearest_rangef(mva_kdtree *tree, const float *pos, float range);
+mva_kdres *mva_kd_nearest_range3(mva_kdtree *tree, double x, double y, double z, double range);
+mva_kdres *mva_kd_nearest_range3f(mva_kdtree *tree, float x, float y, float z, float range);
+
+
+void mva_kd_res_free(mva_kdres *set);
+int mva_kd_res_size(mva_kdres *set);
+void mva_kd_res_rewind(mva_kdres *set);
+int mva_kd_res_end(mva_kdres *set);
+int mva_kd_res_next(mva_kdres *set);
+
+void *mva_kd_res_item(mva_kdres *set, double *pos);
+void *mva_kd_res_itemf(mva_kdres *set, float *pos);
+void *mva_kd_res_item3(mva_kdres *set, double *x, double *y, double *z);
+void *mva_kd_res_item3f(mva_kdres *set, float *x, float *y, float *z);
+
+void * mva_kd_res_item_data(mva_kdres *set);
 
 MVAP_END_DECLS
 
