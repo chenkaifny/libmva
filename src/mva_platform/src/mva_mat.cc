@@ -222,7 +222,7 @@ void mva_mat_eye(mva_mat *mat)
 
 int mva_mat_add(mva_mat *src1, mva_mat *src2, mva_mat *dst)
 {
-    if (!(src2->row == src2->row && src2->row == dst->row && src1->col == src2->col && src2->col == dst->col))
+    if (!(src1->row == src2->row && src2->row == dst->row && src1->col == src2->col && src2->col == dst->col))
     {
         return -1;
     }
@@ -241,7 +241,7 @@ int mva_mat_add(mva_mat *src1, mva_mat *src2, mva_mat *dst)
 
 int mva_mat_sub(mva_mat *src1, mva_mat *src2, mva_mat *dst)
 {
-    if (!(src2->row == src2->row && src2->row == dst->row && src1->col == src2->col && src2->col == dst->col))
+    if (!(src1->row == src2->row && src2->row == dst->row && src1->col == src2->col && src2->col == dst->col))
     {
         return -1;
     }
@@ -392,7 +392,7 @@ int mva_mat_inv(mva_mat *src, mva_mat *dst)
         return -1;
     }
 
-    if (src->row != src->col || src->row != dst->row || src->col != src->col)
+    if (src->row != src->col || src->row != dst->row || src->col != dst->col)
     {
         return -1;
     }

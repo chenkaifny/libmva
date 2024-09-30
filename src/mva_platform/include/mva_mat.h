@@ -52,17 +52,58 @@ void mva_mat_eye(mva_mat *mat);
  * @param src1       src1 mat
  * @param src2       src2 mat
  * @param dst        dst mar
+ * @return 0 or error code
  */
 int mva_mat_add(mva_mat *src1, mva_mat *src2, mva_mat *dst);
+
+/* @brief mat sub
+ * @param src1       src1.mat
+ * @param src2       src2.mat
+ * @param dst        dst.mat
+ * @return 0 or error code
+ */
 int mva_mat_sub(mva_mat *src1, mva_mat *src2, mva_mat *dst);
+
+/* @brief mat multiply
+ * @param src1       src1.mat
+ * @param src2       src2.mat
+ * @param dst        dst.mat
+ * @return 0 or error code
+ */
 int mva_mat_mul(mva_mat *src1, mva_mat *src2, mva_mat *dst);
 
+/* @brief mat trans
+ * @param src        src.mat
+ * @param dst        dst.mat
+ * @return 0 or error code
+ */
 int mva_mat_trans(mva_mat *src, mva_mat *dst);
 
+/* @brief mat determinant
+ * @param mat
+ * @return det
+ */
 float mva_mat_det(mva_mat *mat);
+
+/* @brief mat adjoint
+ * @param src        src.mat
+ * @param dst        dst.mat
+ * @return 0 or error code
+ */
 int mva_mat_adj(mva_mat *src, mva_mat *dst);
+
+/* @brief mat inversion
+ * @param src        src.mat
+ * @param dst        dst.mat
+ * @return 0 or error code
+ */
 int mva_mat_inv(mva_mat *src, mva_mat *dst);
 
+/* @brief mat clone
+ * @param src        src.mat
+ * @param dst        dst.mat
+ * @return 0 or error code
+ */
 void mva_mat_clone(mva_mat *src, mva_mat *dst);
 
 #endif
