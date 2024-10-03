@@ -25,6 +25,7 @@ set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 
 # sub module
 add_subdirectory(src/mva_platform)
+add_subdirectory(src/mva_recog)
 
 # depends
 #target_link_libraries(${PROJECT_NAME} PUBLIC ${OpenCV_LIBS})
