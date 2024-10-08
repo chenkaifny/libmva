@@ -112,18 +112,65 @@ MVAP_API int mva_kd_insert3(mva_kdtree *tree, double x, double y, double z, void
  */
 MVAP_API int mva_kd_insert3f(mva_kdtree *tree, float x, float y, float z, void *data);
 
-
+/* @brief search nearest
+ * @param tree   kd-tree
+ * @param pos    pos
+ * @return result
+ */
 MVAP_API mva_kdres *mva_kd_nearest(mva_kdtree *tree, const double *pos);
+
+/* @brief search nearest float 
+ * @param tree   kd-tree
+ * @param pos    pos
+ * @return result
+ */
 MVAP_API mva_kdres *mva_kd_nearestf(mva_kdtree *tree, const float *pos);
+
+/* @brief search nearest 3d point 
+ * @param tree   kd-tree
+ * @param pos    pos
+ * @return result
+ */
 MVAP_API mva_kdres *mva_kd_nearest3(mva_kdtree *tree, double x, double y, double z);
+
+/* @brief search nearest float 3d point
+ * @param tree   kd-tree
+ * @param pos    pos
+ * @return result
+ */
 MVAP_API mva_kdres *mva_kd_nearest3f(mva_kdtree *tree, float x, float y, float z);
 
+/* @brief search nearest range 
+ * @param tree   kd-tree
+ * @param pos    pos
+ * @return result
+ */
 MVAP_API mva_kdres *mva_kd_nearest_range(mva_kdtree *tree, const double *pos, double range);
+
+/* @brief search nearest range float
+ * @param tree   kd-tree
+ * @param pos    pos
+ * @return result
+ */
 MVAP_API mva_kdres *mva_kd_nearest_rangef(mva_kdtree *tree, const float *pos, float range);
+
+/* @brief search nearest range 3d
+ * @param tree   kd-tree
+ * @param pos    pos
+ * @return result
+ */
 MVAP_API mva_kdres *mva_kd_nearest_range3(mva_kdtree *tree, double x, double y, double z, double range);
+
+/* @brief search nearest range float 3d
+ * @param tree   kd-tree
+ * @param pos    pos
+ * @return result
+ */
 MVAP_API mva_kdres *mva_kd_nearest_range3f(mva_kdtree *tree, float x, float y, float z, float range);
 
-
+/* @brief free res resource
+ * @param set   kd-tree
+ */
 MVAP_API void mva_kd_res_free(mva_kdres *set);
 MVAP_API int mva_kd_res_size(mva_kdres *set);
 MVAP_API void mva_kd_res_rewind(mva_kdres *set);
