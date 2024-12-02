@@ -8,6 +8,7 @@ project(mvap)
 add_compile_definitions(MVAP_EXPORT)
 
 add_library(mvap 
+ mva_image.cc
  mva_mat.cc
  mva_kdtree.cc)
 
